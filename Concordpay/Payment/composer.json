@@ -1,0 +1,45 @@
+{
+  "name": "Concordpay/magento2",
+  "description": "Concordpay Magento 2.3 payment module",
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+      {
+          "name": "Concordpay",
+          "email": "support@wconcord.ua",
+          "homepage": "https://concord.ua"
+      }
+  ],
+  "keywords": [
+      "magento2_module",
+      "magento2_payment_module",
+      "payment_gateway",
+      "magento2_payment_gateway",
+      "payment_processing",
+      "magento2_payment_processing",
+      "e-commerce",
+      "visa",
+      "mastercard",
+      "debit_card",
+      "credit_card",
+      "authorize",
+      "capture",
+      "recurring",
+      "refund",
+      "3d-secure",
+      "fraud"
+  ],
+  "require": {
+    "php": "~7.1.3|~7.2"
+  },
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Concordpay\\Payment\\": ""
+    }
+  }
+}
