@@ -1,12 +1,11 @@
 <form action="<?php echo $block->getGateUrl(); ?>" method="POST" id="concordpay_payment_form" style="display: none">
-	<?php $data = $this->getPostData(); ?>
+    <?php $data = $this->getPostData(); ?>
     <?php if (!empty($data)): ?>
-		<?php echo $data ?>
-	<?php endif; ?>
+        <?php echo $data ?>
+    <?php endif; ?>
 </form>
 <script type="text/javascript">
-	require(["jquery"], function ($)
-	{
-		$('#concordpay_payment_form').submit();
-	});
+  window.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('concordpay_payment_form').submit();
+  });
 </script>

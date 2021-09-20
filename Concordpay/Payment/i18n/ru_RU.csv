@@ -1,0 +1,31 @@
+"Payment by card on the site","Оплата картой на сайте"
+"The authorized amount is %1.","Разрешённая сумма %1."
+"An error has occurred during payment. Merchant data is incorrect.","Произошла ошибка при оплате. Данные продавца неверны."
+"An error has occurred during payment. Order is declined.","Произошла ошибка при оплате. Заказ отклонен."
+"An error has occurred during payment. Signature is not valid.","Произошла ошибка при оплате. Подпись недействительна."
+ConcordPay,ConcordPay
+"<div class=""concordpay-payment-logo""></div>
+                        <div class=""concordpay-payment-text"">
+                            <div class=""concordpay-payment-text-bold"">Payment Visa, Mastercard, Google Pay, Apple Pay&nbsp;</div>
+                            <i>Process payments using your own internet merchant account.</i>
+                        </div>","<div class=""concordpay-payment-logo""></div>
+                        <div class=""concordpay-payment-text"">
+                            <div class=""concordpay-payment-text-bold"">Оплата Visa, Mastercard, Google Pay, Apple Pay&nbsp;</div>
+                            <i>Обрабатывайте платежи, используя свой аккаунт интернет-продавца.</i>
+                        </div>"
+Enabled,Включён
+"Plugin state","Состояние плагина"
+Title,Название
+"Text displayed at checkout","Отображаемый во время оформления заказа текст"
+Merchant,Идентификатор продавца
+"Given to Merchant by ConcordPay","Выдаётся продавцу системой ConcordPay"
+"Secret key","Секретный ключ"
+"New order status","Статус нового заказа"
+"Order status after creation","Статус заказа после создания"
+"Status after payment","Статус после оплаты"
+"Order status after successful payment","Статус заказа после успешной оплаты"
+"Status after payment refund","Статус после возврата оплаты"
+"Order status after payment refund","Статус заказа после возврата средств покупателю"
+"Allowed Shipping Methods","Разрешённые способы доставки"
+"Sort Order","Порядок сортировки"
+"Defines the sort order of the section of payment methods","Определяет порядок сортировки раздела способов оплаты"

@@ -7,11 +7,12 @@
             <concordpay>
                 <active>1</active>
                 <model>Concordpay\Payment\Model\Concordpay</model>
-                <title>Concordpay</title>
+                <title>ConcordPay - payment Visa, Mastercard, Google Pay, Apple Pay</title>
                 <merchant>merchant_id</merchant>
                 <secret_key>secret_key</secret_key>
-                <request_url>https://pay.concord.ua/api</request_url>
-                <order_status>pending_payment</order_status>
+                <order_status>pending</order_status>
+                <after_pay_status>complete</after_pay_status>
+                <after_refund_status>canceled</after_refund_status>
                 <sort_order>100</sort_order>
                 <payment_action>https://pay.concord.ua/api</payment_action>
                 <allowspecific>0</allowspecific>

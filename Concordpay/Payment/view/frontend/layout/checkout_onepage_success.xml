@@ -1,7 +1,11 @@
 <?xml version="1.0"?>
-<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-	<update handle="empty"/>
-	<referenceContainer name="page.wrapper">
-		<block class="Concordpay\Payment\Block\Widget\Redirect" template="Concordpay_Payment::html/concordpay_form.phtml" />
-	</referenceContainer>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="order.success.additional.info">
+            <block class="Concordpay\Payment\Block\Widget\Redirect"
+                   name="onepage.success.concordpay"
+                   template="Concordpay_Payment::html/concordpay_form.phtml"/>
+        </referenceContainer>
+    </body>
 </page>

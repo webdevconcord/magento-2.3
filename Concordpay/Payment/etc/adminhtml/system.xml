@@ -1,51 +1,143 @@
 <?xml version="1.0"?>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
         <section id="payment">
-            <group id="concordpay" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Оплата картой VISA или Mastercard (ConcordPay)</label>
-                <field id="active" translate="label" type="select" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="0">
+            <group id="concordpay"
+                   translate="label comment"
+                   type="text"
+                   sortOrder="10"
+                   showInDefault="1"
+                   showInWebsite="1"
+                   showInStore="1">
+                <label>ConcordPay</label>
+                <comment>
+                    <![CDATA[
+                        <div class="concordpay-payment-logo"></div>
+                        <div class="concordpay-payment-text">
+                            <div class="concordpay-payment-text-bold">Payment Visa, Mastercard, Google Pay, Apple Pay&nbsp;</div>
+                            <i>Process payments using your own internet merchant account.</i>
+                        </div>
+                    ]]>
+                </comment>
+                <field id="active"
+                       translate="label tooltip"
+                       type="select"
+                       sortOrder="15"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
                     <label>Enabled</label>
+                    <tooltip>Plugin state</tooltip>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-                <field id="title" translate="label" type="text" sortOrder="2" showInDefault="1" showInWebsite="1" showInStore="1">
+                <field id="title"
+                       translate="label tooltip"
+                       type="text"
+                       sortOrder="20"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="1">
                     <label>Title</label>
-                    <depends><field id='active'>1</field></depends>
+                    <tooltip>Text displayed at checkout</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                 </field>
-                <field id='merchant' showInDefault='1' showInStore='1' showInWebsite='1'
-                       sortOrder='3' translate='label' type='text'>
+                <field id='merchant'
+                       showInDefault='1'
+                       showInStore='1'
+                       showInWebsite='1'
+                       sortOrder='25'
+                       translate='label tooltip'
+                       type='text'>
                     <label>Merchant</label>
-                    <depends><field id='active'>1</field></depends>
+                    <tooltip>Given to Merchant by ConcordPay</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                     <validate>required-entry</validate>
                 </field>
-                <field id='secret_key' showInDefault='1' showInStore='1' showInWebsite='1'
-                       sortOrder='4' translate='label' type='text'>
+                <field id='secret_key'
+                       showInDefault='1'
+                       showInStore='1'
+                       showInWebsite='1'
+                       sortOrder='30'
+                       translate='label tooltip'
+                       type='text'>
                     <label>Secret key</label>
-                    <depends><field id='active'>1</field></depends>
+                    <tooltip>Given to Merchant by ConcordPay</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                     <validate>required-entry</validate>
                 </field>
-                <field id='request_url' showInDefault='1' showInStore='1' showInWebsite='1'
-                       sortOrder='5' translate='label' type='text'>
-                    <label>Request URL</label>
-                    <depends><field id='active'>1</field></depends>
-                    <comment>Адрес отправки запроса (по умолчанию: https://pay.concord.ua/api)</comment>
-                </field>
-                <field id='order_status' showInDefault='1' showInStore='1' showInWebsite='1'
-                       sortOrder='8' translate='label' type='select'>
+                <field id='order_status'
+                       showInDefault='1'
+                       showInStore='1'
+                       showInWebsite='1'
+                       sortOrder='35'
+                       translate='label tooltip'
+                       type='select'>
                     <label>New order status</label>
-                    <depends><field id='active'>1</field></depends>
+                    <tooltip>Order status after creation</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                     <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
                 </field>
-                <field id="allowed_carrier" translate="label" type="multiselect"
-                       sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id='after_pay_status'
+                       showInDefault='1'
+                       showInStore='1'
+                       showInWebsite='1'
+                       sortOrder='40'
+                       translate='label tooltip'
+                       type='select'>
+                    <label>Status after payment</label>
+                    <tooltip>Order status after successful payment</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id='after_refund_status'
+                       showInDefault='1'
+                       showInStore='1'
+                       showInWebsite='1'
+                       sortOrder='45'
+                       translate='label tooltip'
+                       type='select'>
+                    <label>Status after payment refund</label>
+                    <tooltip>Order status after payment refund</tooltip>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
+                    <source_model>Magento\Sales\Model\Config\Source\Order\Status</source_model>
+                </field>
+                <field id="allowed_carrier"
+                       translate="label"
+                       type="multiselect"
+                       sortOrder="50"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
                     <label>Allowed Shipping Methods</label>
-                    <depends><field id='active'>1</field></depends>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                     <source_model>Magento\Shipping\Model\Config\Source\Allmethods</source_model>
                 </field>
-                <field id="sort_order" translate="label" type="text"
-                       sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                <field id="sort_order"
+                       translate="label"
+                       type="text"
+                       sortOrder="55"
+                       showInDefault="1"
+                       showInWebsite="1"
+                       showInStore="0">
                     <label>Sort Order</label>
-                    <depends><field id='active'>1</field></depends>
+                    <depends>
+                        <field id='active'>1</field>
+                    </depends>
                 </field>
             </group>
         </section>

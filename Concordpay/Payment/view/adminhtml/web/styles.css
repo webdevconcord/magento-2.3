@@ -1,0 +1,25 @@
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+.concordpay-payment-logo {
+    background: url("images/concordpay_logo.svg?width=965")  no-repeat 0 0 / 18rem auto;
+    height: 100px;
+    width: auto;
+    padding-left: 20rem;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+.concordpay-payment-text {
+    display: inline-block;
+    vertical-align: middle;
+    width: 50%;
+}
+
+.concordpay-payment-text-bold {
+    font-size: 1.7rem;
+    font-weight: 600;
+    letter-spacing: .025em;
+}

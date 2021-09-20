@@ -2,27 +2,38 @@
 
 namespace Concordpay\Payment\Controller\Url;
 
+use Magento\Authorizenet\Model\DirectPost;
 use Magento\Framework\App\Action\Action;
+use Magento\Framework\App\Action\Context;
+use Magento\Framework\View\Result\Page;
+use Magento\Framework\View\Result\PageFactory;
 
+/**
+ * Class ConcordpaySuccess
+ *
+ * @package Concordpay\Payment\Controller\Url
+ */
 class ConcordpaySuccess extends Action
 {
-    /** @var \Magento\Framework\View\Result\PageFactory */
+    /** @var PageFactory */
     protected $resultPageFactory;
 
+    /**
+     * @param Context $context
+     * @param PageFactory $resultPageFactory
+     */
     public function __construct(
-        \Magento\Framework\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory
-    )
-    {
+        Context     $context,
+        PageFactory $resultPageFactory
+    ) {
         $this->resultPageFactory = $resultPageFactory;
         parent::__construct($context);
     }
 
-
     /**
-     * Load the page defined
+     * Load the page defined.
      *
-     * @return \Magento\Framework\View\Result\Page
+     * @return void
      */
     public function execute()
     {
